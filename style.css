@@ -1,10 +1,7 @@
 html {
-  margin: 30px;
+  margin: 20px;
   font-size: 30px;
-}
-
-p, input {
-  font-size: 30px;
+  box-sizing: border-box;
 }
 
 .button {
@@ -15,8 +12,14 @@ p, input {
   text-align: center;
   text-decoration: none;
   display: inline-block;
+  font-size: 16px;
 }
 
-.outcome {
-  font-weight: bold;
+#emailAddressOutcome {
+  visibility: hidden;
+}
+
+#emptyNotification {
+  visibility: hidden;
+  color: red;
 }
