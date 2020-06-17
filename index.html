@@ -4,33 +4,29 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Group Activity JS 4</title>
+	<title>The ACME College Summer Program</title>
 	<link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-	<label for="firstName">First name:</label>
-	<br>
-	<input type="text" id="firstName">
+	<h1><strong>The ACME College Summer Program</strong></h1>
+
+	<label for="name">Name:</label><br>
+	<input type="text" id="name"><br>
 
 	<br>
-	<br>
 
-	<label for="lastName">Last name:</label>
-	<br>
-	<input type="text" id="lastName">
+	<label for="dateOfBirth">Birth date:</label><br>
+	<input type="date" id="dateOfBirth"><br>
 
 	<br>
-	<br>
 
-	<button class="button" id="generateEmailAddress">Click to generate email address</button>
+	<input type="submit" id="checkEligibilityButton" class="button" value="Check your eligibility">
 
-	<p id="emptyNotification">Please fill out your last name to generate email address</p>
+	<p id="greeting" class="outcome"></p>
+	<p id="result" class="outcome"></p>
 
-	<p id="emailAddressOutcome">You have been assigned the following email addess: <span id="emailAddress"></p>
-
-  <script src="script.js"></script>
-
+	<script src="script.js"></script>
 </body>
 
 </html>

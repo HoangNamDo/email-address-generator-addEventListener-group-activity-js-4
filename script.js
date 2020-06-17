@@ -1,28 +1,37 @@
-function emailAddressHandler() {
-  let firstName;
-  let lastName;
-  let emailAddress;
+checkEligibilityButton.addEventListener("click", checkEligibility);
 
-  firstName = document.getElementById("firstName").value;
-  lastName = document.getElementById("lastName").value;
+function checkEligibility() {
+  const name = document.getElementById("name").value;
+  let dateOfBirth = document.getElementById("dateOfBirth").value;
+  dateOfBirth = new Date(dateOfBirth);
+  dateOfBirth.setDate(dateOfBirth.getDate() + 1);
+  let dateStamp = new Date(2020, 06, 01);
 
-  if (firstName.length == 0) {
-    firstName = "Fnu";
-  }
-  
-  if (lastName.length == 0) {
-    document.getElementById("emptyNotification").style.visibility = "visible";
-    document.getElementById("emailAddressOutcome").style.visibility = "hidden";
-  } else {
-    emailAddress = `${firstName}.${lastName}@bellevuecollege.edu`;
-    emailAddress = emailAddress.toLowerCase();
+  age = calculateAge(dateOfBirth, dateStamp);
 
-    document.getElementById("emailAddress").innerHTML = emailAddress.bold();
+  console.log(dateOfBirth);
+  console.log(dateStamp);
+  console.log(age);
 
-    document.getElementById("emailAddressOutcome").style.visibility = "visible";
-    document.getElementById("emptyNotification").style.visibility = "hidden";
-  }
+  let greeting = `Hi ${name}! You are ${age} years old.`;
+  let result = "";
 
+  if (age == 16 || age == 17)
+    result = "Congratulation! You are allowed to take classes during Summer Quarter by the ACME College Summer Program.";
+  else
+    result = "Sorry! You are NOT allowed to take classes during Summer Quarter by the ACME College Summer Program.";
+
+  document.getElementById("greeting").innerHTML = greeting;
+  document.getElementById("result").innerHTML = result;
 }
 
-generateEmailAddress.addEventListener("click", emailAddressHandler);
+function calculateAge(firstDate, secondDate) {
+  diffYear = secondDate.getFullYear() - firstDate.getFullYear();
+  diffMonth = secondDate.getMonth() - firstDate.getMonth();
+  diffDate = secondDate.getDate() - firstDate.getDate();
+
+  if ((diffMonth > 0) || (diffMonth = 0 && diffDate > 0))
+    return diffYear;
+  else;
+  return diffYear - 1;
+}
