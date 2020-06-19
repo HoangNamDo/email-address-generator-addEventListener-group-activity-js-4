@@ -1,28 +1,27 @@
-function emailAddressHandler() {
-  let firstName;
-  let lastName;
-  let emailAddress;
+generateEmailAddressButton.addEventListener("click", generateEmailAddress);
 
-  firstName = document.getElementById("firstName").value;
-  lastName = document.getElementById("lastName").value;
+let firstName = document.getElementById("firstName");
+let lastName = document.getElementById("lastName");
 
-  if (firstName.length == 0) {
-    firstName = "Fnu";
+let emptyNotification = document.getElementById("emptyNotification");
+let emailAddressOutcome = document.getElementById("emailAddressOutcome");
+
+
+function generateEmailAddress() {
+  let emailAddress = "";
+
+  if (firstName.value == "") {
+    firstName.value = "Fnu";
   }
-  
-  if (lastName.length == 0) {
-    document.getElementById("emptyNotification").style.visibility = "visible";
-    document.getElementById("emailAddressOutcome").style.visibility = "hidden";
+  if (lastName.value == "") {
+    emptyNotification.style.visibility = "visible";
+    emailAddressOutcome.style.visibility = "hidden";
   } else {
-    emailAddress = `${firstName}.${lastName}@bellevuecollege.edu`;
+    emailAddress = `${firstName.value}.${lastName.value}@bellevuecollege.edu`;
     emailAddress = emailAddress.toLowerCase();
-
-    document.getElementById("emailAddress").innerHTML = emailAddress.bold();
-
-    document.getElementById("emailAddressOutcome").style.visibility = "visible";
-    document.getElementById("emptyNotification").style.visibility = "hidden";
+    document.getElementById("emailAddressSpan").innerHTML = emailAddress.bold();
+    emailAddressOutcome.style.visibility = "visible";
+    emptyNotification.style.visibility = "hidden";
   }
 
 }
-
-generateEmailAddress.addEventListener("click", emailAddressHandler);

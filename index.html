@@ -2,34 +2,28 @@
 <html>
 
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
-	<title>Group Activity JS 4</title>
-	<link href="style.css" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Group Activity JS 4</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-	<label for="firstName">First name:</label>
-	<br>
-	<input type="text" id="firstName">
+	  <p>First Name:<br>
+    <input type="text" id="firstName">
+    </p>
 
-	<br>
-	<br>
+    <p>Last Name:<br>
+    <input type="text" id="lastName">
+    </p>
 
-	<label for="lastName">Last name:</label>
-	<br>
-	<input type="text" id="lastName">
+    <button class="button" id="generateEmailAddressButton">Click to generate email address</button>
 
-	<br>
-	<br>
+    <p id="emptyNotification">Please fill out your last name to generate email address</p>
 
-	<button class="button" id="generateEmailAddress">Click to generate email address</button>
+    <p id="emailAddressOutcome">You have been assigned the following email addess: <span id="emailAddressSpan"></p>
 
-	<p id="emptyNotification">Please fill out your last name to generate email address</p>
-
-	<p id="emailAddressOutcome">You have been assigned the following email addess: <span id="emailAddress"></p>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
 
